@@ -14,15 +14,12 @@ purpose:		robot
 #include "crobot_client.h"
 #include <signal.h>
 #include "cmsg_dispatch.h"
-//#include "clogin_mgr.h"
 #include "cgm_command.h"
 #include <chrono>
 #include "cnet_msg_header.h"
 #include "cstr2digit.h"
-//#include "ctest_case_global_mgr.h"
-//#include "cfriend_circle_http_mgr.h"
 #include "crandom.h"
-//#include <sys/resource.h>
+
 namespace chen {
 	crobot g_rotbot;
 	const uint32_t TICK_TIME = 200;
@@ -70,8 +67,7 @@ namespace chen {
 		}
 		SYSTEM_LOG("client init success!");
 
-		// WAN启动
-
+		// WAN启动 
 		if (false == g_lan_client.startup())
 		{
 			ERROR_LOG("[%s] client start error!", __FUNCTION__);

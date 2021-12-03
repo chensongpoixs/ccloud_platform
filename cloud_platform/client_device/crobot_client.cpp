@@ -41,7 +41,7 @@ namespace  chen {
 
 		const uint32 recv_buf_size = g_cfg.get_uint32(ECI_WanInputBufSize);
 		const uint32 send_buf_size = g_cfg.get_uint32(ECI_WanOutputBufSize);
-		if (!m_net_ptr->init("crobot", m_max_client_session_num , 0, send_buf_size, recv_buf_size))
+		if (!m_net_ptr->init("client_device", m_max_client_session_num , 0, send_buf_size, recv_buf_size))
 		{
 			return false;
 		}
@@ -129,7 +129,7 @@ namespace  chen {
 						}
 					}
 				}*/
-				session_ptr->set_status(ELSS_None, ELSS_Logining);
+				session_ptr->set_status(ELSS_None, ELSS_Logined);
 				break;
 			case ELSS_Logining:
 				break;
@@ -201,6 +201,7 @@ namespace  chen {
 		{
 			ERROR_LOG("[%s] invalid session status, index = %u, status=%d", __FUNCTION__, index, status);
 			close(session_id);
+			m_session_ptr[index].set_status(ELSS_Connecting, ELSS_Closed);
 			return;
 		}
 

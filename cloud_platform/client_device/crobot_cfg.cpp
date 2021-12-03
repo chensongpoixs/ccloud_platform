@@ -35,7 +35,7 @@ namespace chen {
 		set_uint32(ECI_WanOutputBufSize, "wan_output_buf_size", 70 * 1024);
 
 		set_string(ECI_WanIp, "wan_ip", "127.0.0.1");
-		set_uint32(ECI_WanPort, "wan_port", 8888);
+		set_uint32(ECI_WanPort, "wan_port", 8001);
 		set_uint32(ECI_RobotMax, "robot_max", 1);
 		set_uint32(ECI_RobotStartIndex, "robot_start_index", 0);
 		set_string(ECI_RobotNamePre, "robot_name_prefix", "robot");

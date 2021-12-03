@@ -121,6 +121,7 @@
   <ItemGroup>
     <ClCompile Include="cgm_command.cpp" />
     <ClCompile Include="cmsg_dispatch.cpp" />
+    <ClCompile Include="cplayer.cpp" />
     <ClCompile Include="cplayer_handler.cpp" />
     <ClCompile Include="crobot.cpp" />
     <ClCompile Include="crobot_cfg.cpp" />

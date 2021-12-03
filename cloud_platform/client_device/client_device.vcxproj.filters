@@ -26,6 +26,9 @@
     <ClCompile Include="cplayer_handler.cpp">
       <Filter>client</Filter>
     </ClCompile>
+    <ClCompile Include="cplayer.cpp">
+      <Filter>client</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">

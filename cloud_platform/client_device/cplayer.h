@@ -50,14 +50,10 @@ namespace chen {
 		const csession * get_session() const {return m_session_ptr;}
         csession * get_session()  {return m_session_ptr;}
 	public:
-		/*cfriend_circle_table_mgr* get_friend_circle_table_mgr() { return (cfriend_circle_table_mgr*)(m_mgrs[MGR_FIRENDCIRCLE]); }
-		cmatch_game_mgr* get_match_game_mgr() { return (cmatch_game_mgr*)(m_mgrs[MGR_MATCH_GAME]); }
-		ctest_case_mgr* get_test_case_mgr() { return (ctest_case_mgr*)(m_mgrs[MGR_TEST_CASE]); }*/
+	 
 		
 	public:
-		/*const cfriend_circle_table_mgr* get_friend_circle_table_mgr() const { return (const cfriend_circle_table_mgr*)(m_mgrs[MGR_FIRENDCIRCLE]); }
-		const cmatch_game_mgr* get_match_game_mgr()const { return (const cmatch_game_mgr*)(m_mgrs[MGR_MATCH_GAME]); }
-		const ctest_case_mgr* get_test_case_mgr() const  { return (const ctest_case_mgr*)(m_mgrs[MGR_TEST_CASE]); }*/
+		 
 	public:
 		bool send_msg(uint16_t msg_id, const ::google::protobuf::MessageLite& msg) const;
 		bool send_msg(uint16 msg_id, const ::google::protobuf::MessageLite& msg, int32 match_id);
@@ -65,72 +61,7 @@ namespace chen {
 		void on_msg(uint16_t msg_id, int32 result);
 	public:
 		void 	handle_code(const void* packet, uint32 msg_size);
-		//void	handle_announce(const void* packet, uint32 msg_size);
-		//void	handle_breatheart(const void* packet, uint32 msg_size);
-		//void    handle_login(const void *packet, uint32 msg_size);
-		//void	handle_match_list(const void *packet, uint32 msg_size);
-		//void	handle_player_joinlist(const void *packet, uint32 msg_size);
-		//void	handle_match_run_list(const void *packet, uint32 msg_size);
-		//
-		//// friend circle
-		//void	handle_create_table(const void *packet, uint32 msg_size);
-		//void	handle_delete_table(const void *packet, uint32 msg_size);
-		//void    handle_modify_table(const void *packet, uint32 msg_size);
-
-
-		//// game
-		//void	handle_join_table(const void *packet, uint32 msg_size);
-		//void	handle_leave_table(const void *packet, uint32 msg_size);
-
-		//// game logic
-		//void	handle_game_info(const void *packet, uint32 msg_size);
-		//void	handle_game_timer_info(const void *packet, uint32 msg_size);
-		//void	handle_game_bonus(const void *packet, uint32 msg_size);
-		//void	handle_game_action(const void *packet, uint32 msg_size);
-		//void	handle_game_player_ranking(const void *packet, uint32 msg_size);
-		//void	handle_game_show_hand_card(const void *packet, uint32 msg_size);
-		//void	handle_match_add_chip(const void *packet, uint32 msg_size);
-		//void    handle_match_free_signup_num(const void *packet, uint32 msg_size);
-		//void	handle_game_lookon(const void *packet, uint32 msg_size);
-		//void	handle_game_player_back_chair(const void *packet, uint32 msg_size);
-		//void	handle_game_add_score(const void *packet, uint32 msg_size);
-		//void    handle_game_add_operationtimes(const void *packet, uint32 msg_size);
-  //      void    handle_game_lookon_players(const void *packet, uint32 msg_size);
-  //      void    handle_match_game_device(const void *packet, uint32 msg_size);
-		////        void    handle_game_player_operationtimes(const void *packet, uint32 msg_size);
-
-		//void	handle_match_info_update_notify(const void *packet, uint32 msg_size);
-		//void	handle_ante_blind_change_notify(const void *packet, uint32 msg_size);
-		//void	handle_match_start_notify(const void *packet, uint32 msg_size);
-		//void	handle_match_finish_notify(const void *packet, uint32 msg_size);
-		//void	handle_match_wait_notify(const void *packet, uint32 msg_size);
-		//void	handle_match_result_notify(const void *packet, uint32 msg_size);
-		//void	handle_match_cancle_notify(const void *packet, uint32 msg_size);
-		//void	handle_match_status_change_notify(const void *packet, uint32 msg_size);
-		//void	handle_match_add_chip_notify(const void * packet, uint32 msg_size);
-		//void	handle_game_ready_start_notify(const void *packet, uint32 msg_size);
-		//void	handle_game_start_notify(const void *packet, uint32 msg_size);
-		//void	handle_game_flop_cards_notify(const void *packet, uint32 msg_size);
-		//void	handle_game_turn_cards_notify(const void *packet, uint32 msg_size);
-		//void	handle_game_river_cards_notify(const void *packet, uint32 msg_size);
-		//void	handle_game_user_action_notify(const void *packet, uint32 msg_size);
-		//void	handle_game_user_handcard_notify(const void *packet, uint32 msg_size);
-		//void	handle_game_end_info_notify(const void *packet, uint32 msg_size);
-		//void	handle_game_show_hand_card_notify(const void *packet, uint32 msg_size);
-		//void	handle_game_user_sitedown_notify(const void *packet, uint32 msg_size);
-		//void	handle_game_user_leaveseat_notify(const void *packet, uint32 msg_size);
-		//void	handle_game_user_reservestandup_notify(const void *packet, uint32 msg_size);
-		//void	handle_match_player_cash_chage_notify(const void *packet, uint32 msg_size);
-		//void    handle_game_user_add_operationtimes_notify(const void * packet, uint32 msg_size);
-		//void    handle_match_operationtimes_status_notify(const void * packet, uint32 msg_size);
-		//void    handle_match_multianguage_notify(const void * packet, uint32 msg_size);
-  //      void    handle_game_lookon_players_num_notify(const void * packet, uint32 msg_size);
-  //      void    handle_match_table_count_notify(const void * packet, uint32 msg_size);
-  //      void    handle_game_device_notify(const void * packet, uint32 msg_size);
-
-  //      void    handle_game_end_add_chip_notice(const void *packet, uint32 msg_size);
-
-
+	
 
 	private:
 		csession *				m_session_ptr;

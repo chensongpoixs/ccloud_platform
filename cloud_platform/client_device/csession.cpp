@@ -71,8 +71,13 @@ namespace chen {
 			//++m_count_beart_head;
 			//ERROR_EX_LOG("m_count_beart_head = %llu", m_count_beart_head);
 			//ERROR_EX_LOG("timstamp = %d, beart_heart = %lu, timer = %d", m_timestamp_second, g_cfg.get_uint32(ECI_Beart_Heart), g_timer_mgr.get_second_timestamp());
-			ccmd_param param;
+			//ccmd_param param;
 			//csend_msgc2s::send_beatheart(param, this);
+			uint16_t msg_id = 101;
+			const void * pMsgPtr = "hello world !!!";
+			
+			send_msg(msg_id, pMsgPtr, sizeof(pMsgPtr));
+			NORMAL_LOG("send msgid = %u, ^_^", msg_id);
 			m_timestamp_second = m_timestamp_second - (g_cfg.get_uint32(ECI_Beart_Heart) * 1500);
 		}
 		//m_player.update(elapse);
