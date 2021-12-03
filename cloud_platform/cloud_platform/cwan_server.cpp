@@ -142,7 +142,8 @@ namespace chen {
 	void cwan_server::on_msg_receive(cnet_msg &msg_ptr)
 	{
 		DEBUG_LOG("recv session_id = %u, msg_id =%u,  size = %u data = %s", msg_ptr.get_session_id(), msg_ptr.get_msg_id(), msg_ptr.get_size(), msg_ptr.get_buf());
-//	  static char* buf_ptr =  NULL;
+		send_msg(msg_ptr.get_session_id(), msg_ptr.get_msg_id(), msg_ptr.get_buf(), msg_ptr.get_size());
+		//	  static char* buf_ptr =  NULL;
 //	   if (!buf_ptr)
 //	   {
 //		   //ERROR_EX_LOG("alloc failed ");

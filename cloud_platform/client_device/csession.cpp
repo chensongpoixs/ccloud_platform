@@ -66,7 +66,7 @@ namespace chen {
 	void csession::update(uint32 elapse)
 	{
 		m_timestamp_second += elapse;
-		if (m_timestamp_second > (g_cfg.get_uint32(ECI_Beart_Heart) * 1500))
+		if (m_timestamp_second > (g_cfg.get_uint32(ECI_Beart_Heart) * 150))
 		{
 			//++m_count_beart_head;
 			//ERROR_EX_LOG("m_count_beart_head = %llu", m_count_beart_head);
@@ -74,11 +74,11 @@ namespace chen {
 			//ccmd_param param;
 			//csend_msgc2s::send_beatheart(param, this);
 			uint16_t msg_id = 101;
-			const void * pMsgPtr = "hello world !!!";
+			char  pMsgPtr[1024] = "hello world !!!";
 			
-			send_msg(msg_id, pMsgPtr, sizeof(pMsgPtr));
+			send_msg(msg_id, (const void *)pMsgPtr, sizeof(pMsgPtr));
 			NORMAL_LOG("send msgid = %u, ^_^", msg_id);
-			m_timestamp_second = m_timestamp_second - (g_cfg.get_uint32(ECI_Beart_Heart) * 1500);
+			m_timestamp_second = m_timestamp_second - (g_cfg.get_uint32(ECI_Beart_Heart) * 150);
 		}
 		//m_player.update(elapse);
 	}
