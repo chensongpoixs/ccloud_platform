@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="cwan_server.cpp">
+      <Filter>server</Filter>
+    </ClCompile>
+    <ClCompile Include="cwan_session.cpp">
+      <Filter>server</Filter>
+    </ClCompile>
+    <ClCompile Include="ccfg.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="ctime_mgr.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="cgeteway_server.cpp">
+      <Filter>server</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="server">
+      <UniqueIdentifier>{094a93c8-2a02-4f2e-89cb-0735303511b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{42536620-64a6-4080-9fb3-020a95b8bdee}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cwan_server.h">
+      <Filter>server</Filter>
+    </ClInclude>
+    <ClInclude Include="cwan_session.h">
+      <Filter>server</Filter>
+    </ClInclude>
+    <ClInclude Include="ccfg.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="ctime_mgr.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="cgeteway_server.h">
+      <Filter>server</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
