@@ -19,32 +19,32 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{93D1A19D-194F-4812-9296-A6DFD0F06F4C}</ProjectGuid>
-    <RootNamespace>common</RootNamespace>
+    <ProjectGuid>{B4E937BD-A745-468B-BE96-08C812D34F71}</ProjectGuid>
+    <RootNamespace>client_device</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -68,22 +68,11 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\lib\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)..\vsout\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\lib\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)..\vsout\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\lib\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)..\vsout\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IncludePath>$(C_INCLUDE)\protobuf\include;D:\Work\crobot\Server\clib;$(W_INCLUDE)\boost\include;$(IncludePath)</IncludePath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\lib\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)..\vsout\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IncludePath>D:\Work\crobot\Server\clib;..\common;$(W_INCLUDE)\boost\include;$(C_INCLUDE)\protobuf\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Work\crobot\Server\lib\$(Platform)\$(Configuration)\;..\lib\$(Platform)\$(Configuration)\;$(W_INCLUDE)\boost\lib\x64;$(C_INCLUDE)\protobuf\lib\x64\debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -97,8 +86,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;_WINSOCK_DEPRECATED_NO_WARNINGS;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>libboost_chrono-vc140-mt-gd-1_60.lib;libboost_date_time-vc140-mt-gd-1_60.lib;libboost_filesystem-vc140-mt-gd-1_60.lib;libboost_locale-vc140-mt-gd-1_60.lib;libboost_regex-vc140-mt-gd-1_60.lib;libboost_system-vc140-mt-gd-1_60.lib;libboost_thread-vc140-mt-gd-1_60.lib;libprotobuf-lited.lib;libprotobufd.lib;libprotocd.lib;common.lib;clib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -127,16 +119,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="cmsg_base_id.h" />
-    <ClInclude Include="cmsg_header.h" />
-    <ClInclude Include="cmsg_parse.h" />
-    <ClInclude Include="cmsg_statistic.h" />
+    <ClCompile Include="cgm_command.cpp" />
+    <ClCompile Include="cmsg_dispatch.cpp" />
+    <ClCompile Include="cplayer_handler.cpp" />
+    <ClCompile Include="crobot.cpp" />
+    <ClCompile Include="crobot_cfg.cpp" />
+    <ClCompile Include="crobot_client.cpp" />
+    <ClCompile Include="csession.cpp" />
+    <ClCompile Include="ctime_mgr.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cmsg_header.cpp" />
-    <ClCompile Include="cmsg_parse.cpp" />
-    <ClCompile Include="cmsg_statistic.cpp" />
-    <ClCompile Include="cmsg_statistic_reg.cpp" />
+    <ClInclude Include="cgm_command.h" />
+    <ClInclude Include="cmsg_dispatch.h" />
+    <ClInclude Include="cplayer.h" />
+    <ClInclude Include="crobot.h" />
+    <ClInclude Include="crobot_cfg.h" />
+    <ClInclude Include="crobot_client.h" />
+    <ClInclude Include="csession.h" />
+    <ClInclude Include="ctime_mgr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,2 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="cmsg">
+      <UniqueIdentifier>{79655e5d-3dda-4e99-9103-07bf59d38329}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cmsg_base_id.h">
+      <Filter>cmsg</Filter>
+    </ClInclude>
+    <ClInclude Include="cmsg_header.h">
+      <Filter>cmsg</Filter>
+    </ClInclude>
+    <ClInclude Include="cmsg_parse.h">
+      <Filter>cmsg</Filter>
+    </ClInclude>
+    <ClInclude Include="cmsg_statistic.h">
+      <Filter>cmsg</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cmsg_header.cpp">
+      <Filter>cmsg</Filter>
+    </ClCompile>
+    <ClCompile Include="cmsg_parse.cpp">
+      <Filter>cmsg</Filter>
+    </ClCompile>
+    <ClCompile Include="cmsg_statistic.cpp">
+      <Filter>cmsg</Filter>
+    </ClCompile>
+    <ClCompile Include="cmsg_statistic_reg.cpp">
+      <Filter>cmsg</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
